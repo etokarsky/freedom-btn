@@ -1,0 +1,192 @@
+/*Обнуление*/
+* {
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+*,
+*:before,
+*:after {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+:focus,
+:active {
+	outline: none;
+}
+a:focus,
+a:active {
+	outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+	display: block;
+}
+
+html,
+body {
+	height: 100%;
+	width: 100%;
+	font-size: 100%;
+	line-height: 1;
+	font-size: 14px;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+input,
+button,
+textarea {
+	font-family: inherit;
+}
+
+input::-ms-clear {
+	display: none;
+}
+button {
+	cursor: pointer;
+}
+button::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+a,
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+ul li {
+	list-style: none;
+}
+img {
+	vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: inherit;
+	font-weight: 400;
+}
+/*--------------------*/
+
+.wrapper {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.button {
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	display: block;
+	position: relative;
+}
+
+.button:before,
+.button:after {
+	content: "";
+	position: absolute;
+	height: 100px;
+	width: 100px;
+	border: 2px solid darkred;
+	top: -10px;
+	left: 50%;
+	margin: 0px 0px 0px -40px;
+	transition: all 0.8s ease 0s;
+	z-index: 1;
+}
+
+.button::before {
+	animation: rotate 20s infinite linear;
+}
+
+.button:after {
+	animation: rotate 25s infinite linear;
+}
+
+.button__text {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 80px;
+	padding: 0px 50px;
+	border-radius: 50px;
+	font-size: 24px;
+	text-transform: uppercase;
+	letter-spacing: 10px;
+	color: rgba(0, 0, 0, 0.3);
+	position: relative;
+	overflow: hidden;
+	top: 0;
+	transition: all 0.5s ease 0.2s;
+}
+
+.button__text:before,
+.button__text:after {
+	content: "";
+	position: absolute;
+	height: 100%;
+	width: 50%;
+	background: #eee;
+	transition: all 0.8s ease 0s;
+}
+
+.button__text:before {
+	left: 0;
+	z-index: 2;
+}
+
+.button__text:after {
+	right: 0;
+}
+
+.button__text span {
+	position: relative;
+	z-index: 2;
+}
+
+.button:hover:before,
+.button:hover:after {
+	left: 100%;
+	opacity: 0;
+}
+
+.button:hover .button__text {
+	color: #fff;
+	box-shadow: 0 5px 0px #0c5b52;
+	top: -10px;
+}
+
+.button:hover .button__text:before,
+.button:hover .button__text:after {
+	background: #18b5a4;
+}
+
+.button:hover .button__text:before {
+	width: 100%;
+}
+
+.button:active .button__text {
+	top: -7px;
+	box-shadow: 0 3px 0px #0c5b52;
+	transition: all 0.1s ease 0s;
+}
+
+@keyframes rotate {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
